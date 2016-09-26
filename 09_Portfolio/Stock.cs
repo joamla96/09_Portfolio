@@ -1,7 +1,7 @@
 ﻿using System;
 
 namespace _09_Portfolio {
-	internal class Stock {
+	internal class Stock : IAsset {
 		private string symbol;
 		private double pricePerShare;
 		private int numShares;
@@ -18,14 +18,14 @@ namespace _09_Portfolio {
 
 		public Stock() {}
 
-		internal double GetValue() {
+		public double GetValue() {
 			return this.numShares * this.pricePerShare;
 		}
 
-		internal static double TotalValue(Stock[] stocks) {
+		internal static double TotalValue(IAsset[] stocks) {
 			double sum = 0;
 
-			foreach(Stock stock in stocks) {
+			foreach(IAsset stock in stocks) {
 				sum += stock.GetValue();
 			}
 
