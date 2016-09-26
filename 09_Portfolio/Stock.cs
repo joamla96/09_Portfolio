@@ -23,7 +23,13 @@ namespace _09_Portfolio {
 		}
 
 		internal static double TotalValue(Stock[] stocks) {
-			throw new NotImplementedException();
+			double sum = 0;
+
+			foreach(Stock stock in stocks) {
+				sum += stock.GetValue();
+			}
+
+			return sum;
 		}
 	}
 }
