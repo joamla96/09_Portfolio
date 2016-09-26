@@ -11,7 +11,9 @@ namespace _09_Portfolio {
 		public int NumShares { get { return this.numShares; } set { this.numShares = value; } }
 
 		public Stock(string Sym, double Pps, int Ns) {
-
+			this.symbol = Sym;
+			this.pricePerShare = Pps;
+			this.numShares = Ns;
 		}
 
 		public Stock() {}
