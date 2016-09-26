@@ -31,5 +31,23 @@ namespace _09_Portfolio {
 
 			return sum;
 		}
+
+		public override string ToString() {
+			return "Stock["
+				+ "symbol=" + this.symbol
+				+ ",pricePerShare=" + this.pricePerShare
+				+ ",numShares=" + this.numShares
+				+ "]"; 
+		}
+
+		public override bool Equals(object obj) {
+			Stock s = (Stock)obj;
+
+			return (
+				(this.Symbol  == s.Symbol) &&
+				(this.PricePerShare == s.PricePerShare) &&
+				(this.NumShares == s.NumShares)
+			);
+		}
 	}
 }
